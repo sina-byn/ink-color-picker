@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Text, TextProps } from 'ink';
+import { Box, Text } from 'ink';
 
 // *  utils
 import { spaces } from '../utils/space.js';
@@ -7,7 +7,7 @@ import { spaces } from '../utils/space.js';
 const bottomCenter = (text: string) => spaces(7) + text + spaces(2);
 
 // * types
-type Color = TextProps['backgroundColor'];
+import type { Color } from './ColorPicker.js';
 
 type ColorProps = { color: Color; active?: boolean };
 
