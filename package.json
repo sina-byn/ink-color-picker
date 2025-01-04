@@ -19,7 +19,8 @@
   },
   "scripts": {
     "dev": "tsc --watch",
-    "build": "tsup-node"
+    "build": "tsup-node",
+    "prepublishOnly": "npm run build"
   },
   "peerDependencies": {
     "ink": "^4.1.0",
