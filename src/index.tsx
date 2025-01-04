@@ -1,1 +1,1 @@
-// ! main entry - barrel file
+export { ColorPicker } from './components/ColorPicker.js';
