@@ -23,6 +23,7 @@ type ColorPickerProps = { hint?: boolean; onChange?: (color: Color) => void };
 
 export const ColorPicker = ({ hint = true, onChange }: ColorPickerProps) => {
   const [pointerPosition, setPointerPosition] = useState<PointerPosition>(DEFAULT_POINTER_POSITION);
+  const [selected, setSelected] = useState<boolean>(false);
   const { x, y } = pointerPosition;
   const currentColor = COLORS[y * COLUMN_COUNT + x]!;
 
@@ -30,30 +31,34 @@ export const ColorPicker = ({ hint = true, onChange }: ColorPickerProps) => {
     onChange?.(currentColor);
   }, [currentColor]);
 
-  useInput((input, key) => {
-    if (key.return) {
-      // * onSubmit
-      return;
-    }
+  useInput(
+    (input, key) => {
+      if (key.return) {
+        // * onSubmit
+        setSelected(true);
+        return;
+      }
 
-    if (input) return;
+      if (input) return;
 
-    let stepX = 0;
-    let stepY = 0;
+      let stepX = 0;
+      let stepY = 0;
 
-    if (key.leftArrow) stepX--;
-    if (key.rightArrow) stepX++;
+      if (key.leftArrow) stepX--;
+      if (key.rightArrow) stepX++;
 
-    if (key.upArrow) stepY--;
-    if (key.downArrow) stepY++;
+      if (key.upArrow) stepY--;
+      if (key.downArrow) stepY++;
 
-    setPointerPosition(({ x, y }) => ({
-      x: Math.max(0, Math.min(x + stepX, 3)),
-      y: Math.max(0, Math.min(y + stepY, 1)),
-    }));
-  });
+      setPointerPosition(({ x, y }) => ({
+        x: Math.max(0, Math.min(x + stepX, 3)),
+        y: Math.max(0, Math.min(y + stepY, 1)),
+      }));
+    },
+    { isActive: !selected }
+  );
 
-  return (
+  return selected ? null : (
     <>
       {hint && <Hint />}
 
