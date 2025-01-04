@@ -2,6 +2,10 @@
 
 Color picker component built for [ink](https://www.npmjs.com/package/ink)
 
+Please consider following this project's author, [Sina Bayandorian](https://github.com/sina-byn), and consider starring the project to show your :heart: and support.
+
+> If you're not using Ink and need a Node.js solution, make sure to check out [node-color-picker](https://www.npmjs.com/package/node-color-picker).
+
 ![Demo GIF](assets/demo.gif)
 
 ## Installation
@@ -28,9 +32,7 @@ const App = () => {
     <>
       <ColorPicker onSelect={selectHandler} />
       <Static>
-        <Text>
-          Ink Color Picker Component By Sina Bayandorian
-        </Text>
+        <Text>Ink Color Picker Component By Sina Bayandorian</Text>
       </Static>
     </>
   );
@@ -41,9 +43,8 @@ render(<App />);
 
 ## Props
 
-|          |         Type          | Default |           Description           |
-|----------|-----------------------|---------|---------------------------------|
-|   hint   |        boolean        |  True   | Whether to show the hint or not |
-| onChange | `(c: Color) => void;` |   ---   | Triggers on every color change  |
-| onSelect | `(c: Color) => void;` |   ---   | Triggers once user hits `Enter` |
-
+|          | Type                  | Default | Description                     |
+| -------- | --------------------- | ------- | ------------------------------- |
+| hint     | boolean               | True    | Whether to show the hint or not |
+| onChange | `(c: Color) => void;` | ---     | Triggers on every color change  |
+| onSelect | `(c: Color) => void;` | ---     | Triggers once user hits `Enter` |
