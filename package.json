@@ -17,7 +17,7 @@
     "dev": "tsc --watch",
     "build": "tsup-node"
   },
-  "dependencies": {
+  "peerDependencies": {
     "ink": "^4.1.0",
     "react": "^18.2.0"
   },
