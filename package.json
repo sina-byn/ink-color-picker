@@ -1,0 +1,26 @@
+{
+  "name": "ink-color-picker",
+  "version": "1.0.0",
+  "license": "MIT",
+  "type": "module",
+  "files": [
+    "dist"
+  ],
+  "engines": {
+    "node": ">=16"
+  },
+  "scripts": {
+    "dev": "tsc --watch",
+    "build": "tsup-node"
+  },
+  "dependencies": {
+    "ink": "^4.1.0",
+    "react": "^18.2.0"
+  },
+  "devDependencies": {
+    "@sindresorhus/tsconfig": "^3.0.1",
+    "@types/react": "^18.0.32",
+    "tsup": "^8.3.5",
+    "typescript": "^5.0.3"
+  }
+}
