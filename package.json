@@ -7,6 +7,10 @@
   "exports": {
     "import": "./dist/index.js"
   },
+  "repository": "github:sina-byn/ink-color-picker",
+  "homepage": "https://github.com/sina-byn/ink-color-picker#readme",
+  "description": "Color picker component for ink",
+  "author": "Sina Bayandorian <sina.sina.bayan@protonmail.com> (https://sina-byn.netlify.app/)",
   "files": [
     "dist"
   ],
@@ -26,5 +30,19 @@
     "@types/react": "^18.0.32",
     "tsup": "^8.3.5",
     "typescript": "^5.0.3"
-  }
+  },
+  "bugs": {
+    "url": "https://github.com/sina-byn/ink-color-picker/issues",
+    "email": "sina.sina.bayan@protonmail.com"
+  },
+  "keywords": [
+    "cli",
+    "terminal",
+    "nodejs",
+    "ink",
+    "react",
+    "typescript",
+    "javascript",
+    "color-picker"
+  ]
 }
