@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Box, useInput } from 'ink';
 
 // * components
@@ -19,12 +19,16 @@ const WIDTH = 5 * COLUMN_COUNT;
 // * types
 export type Color = (typeof COLORS)[number];
 
-type ColorPickerProps = { hint?: boolean };
+type ColorPickerProps = { hint?: boolean; onChange?: (color: Color) => void };
 
-export const ColorPicker = ({ hint = true }: ColorPickerProps) => {
+export const ColorPicker = ({ hint = true, onChange }: ColorPickerProps) => {
   const [pointerPosition, setPointerPosition] = useState<PointerPosition>(DEFAULT_POINTER_POSITION);
   const { x, y } = pointerPosition;
   const currentColor = COLORS[y * COLUMN_COUNT + x]!;
+
+  useEffect(() => {
+    onChange?.(currentColor);
+  }, [currentColor]);
 
   useInput((input, key) => {
     if (key.return) {
