@@ -19,9 +19,13 @@ const WIDTH = 5 * COLUMN_COUNT;
 // * types
 export type Color = (typeof COLORS)[number];
 
-type ColorPickerProps = { hint?: boolean; onChange?: (color: Color) => void };
+type ColorPickerProps = {
+  hint?: boolean;
+  onChange?: (color: Color) => void;
+  onSelect?: (color: Color) => void;
+};
 
-export const ColorPicker = ({ hint = true, onChange }: ColorPickerProps) => {
+export const ColorPicker = ({ hint = true, onChange, onSelect }: ColorPickerProps) => {
   const [pointerPosition, setPointerPosition] = useState<PointerPosition>(DEFAULT_POINTER_POSITION);
   const [selected, setSelected] = useState<boolean>(false);
   const { x, y } = pointerPosition;
@@ -34,7 +38,7 @@ export const ColorPicker = ({ hint = true, onChange }: ColorPickerProps) => {
   useInput(
     (input, key) => {
       if (key.return) {
-        // * onSubmit
+        onSelect?.(currentColor);
         setSelected(true);
         return;
       }
