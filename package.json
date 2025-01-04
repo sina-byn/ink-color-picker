@@ -1,6 +1,6 @@
 {
   "name": "ink-color-picker",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "license": "MIT",
   "type": "module",
   "module": "dist/index.js",
