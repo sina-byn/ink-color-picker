@@ -1,1 +1,1 @@
-export { ColorPicker } from './components/ColorPicker.js';
+export { ColorPicker, type Color } from './components/ColorPicker.js';
