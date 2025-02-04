@@ -16,12 +16,12 @@ npm i ink-color-picker
 
 ## Usage
 
-```js
+```tsx
 // * index.tsx
 
 import React, { useState } from 'react';
 import { render, Text, Static } from 'ink';
-import { ColorPicker, type Color } from 'node-color-picker';
+import { ColorPicker, type Color } from 'ink-color-picker';
 
 const App = () => {
   const [color, setColor] = useState < Color > 'white';
@@ -29,12 +29,10 @@ const App = () => {
   const selectHandler = (c: Color) => setColor(c);
 
   return (
-    <>
+    <Box flexDirection='column' rowGap={1}>
       <ColorPicker onSelect={selectHandler} />
-      <Static>
-        <Text>Ink Color Picker Component By Sina Bayandorian</Text>
-      </Static>
-    </>
+      <Text>Ink Color Picker Component By Sina Bayandorian</Text>
+    </Box>
   );
 };
 
